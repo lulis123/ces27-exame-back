@@ -1,6 +1,5 @@
 const express = require('express');
 const walletService = require('../services/walletService');
-
 const router = express.Router();
 
 router.put('/updateWallet',
