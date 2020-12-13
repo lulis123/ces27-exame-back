@@ -19,8 +19,8 @@ class WalletService{
       return await WalletModel.patchUpdate({symbol: WalletData.symbol}, WalletData);
    }
 
-   async getByWalletAddr({symbol}){
-      return await WalletModel.findOne({symbol}).lean();
+   async getByWalletAddr({walletAddr}){
+      return await WalletModel.findOne({walletAddr}).lean();
    }
 
    async getAll(query) {
@@ -32,7 +32,7 @@ class WalletService{
       let walletExists = await WalletModel.exists({walletAddr});
       if (!walletExists)
          return null;
-      return await WalletModel.deleteOne({symbol});
+      return await WalletModel.deleteOne({walletAddr});
    }
 }
 
