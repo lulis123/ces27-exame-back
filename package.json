@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/lulis123/ces27-exame-back/issues"
   },
-  "homepage": "https://github.com/lulis123/ces27-exame-back#readme"
+  "homepage": "https://github.com/lulis123/ces27-exame-back#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "mongoose": "^5.11.7",
+    "mongoose-patch-update": "^1.0.6",
+    "morgan": "^1.10.0"
+  }
 }
