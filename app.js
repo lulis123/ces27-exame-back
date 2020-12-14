@@ -5,6 +5,7 @@ const cors = require('cors')
 const app = express();
 const morgan = require('morgan');
 const mongoosePatchUpdate = require('mongoose-patch-update');
+const walletController = require('./controllers/walletController');
 
 //Setting-up Mongoose
 mongoose.plugin(mongoosePatchUpdate);
@@ -28,5 +29,7 @@ app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+app.use('/wallet',walletController);
 
 app.listen(5000);

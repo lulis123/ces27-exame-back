@@ -3,9 +3,14 @@ const walletService = require('../services/walletService');
 const router = express.Router();
 
 router.put('/updateWallet',
-    asyn(req,res,next) => {
+    async(req,res,next) => {
         try{
-            
+            if(req.body.myWalletAddr == req.body.walletAddr)
+                const updatedWallet = await walletService.updateByWalletAddr(req.body)
+
+            else
+               res.status(200).send({error: "You can't update a wallet that is not yours"});
+
         }
     }
 )

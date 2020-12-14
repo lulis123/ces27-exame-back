@@ -9,23 +9,19 @@ class WalletService{
       if (walletExists)
          return null;
       const Wallet = new WalletModel(WalletData);
+      
       return this.toObject(await Wallet.save())
    }
 
-   async updateByWalletAddr(WalletData){
-      const walletExists = await WalletModel.exists({walletAddr: WalletData.walletAddr});
+   async updateByWalletAddr({walletAddr}){
+      const walletExists = await WalletModel.exists({walletAddr});
       if (!walletExists)
          return null;
-      return await WalletModel.patchUpdate({symbol: WalletData.symbol}, WalletData);
+      return await WalletModel.patchUpdate({walletAddr}, WalletData);
    }
 
    async getByWalletAddr({walletAddr}){
       return await WalletModel.findOne({walletAddr}).lean();
-   }
-
-   async getAll(query) {
-      return await WalletModel.find(query).sort({walletAddr:1}).lean();
-
    }
 
    async deleteByWalletAddr({walletAddr}) {

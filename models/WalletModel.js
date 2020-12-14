@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const mongoosePatchUpdate = require('mongoose-patch-update');
 
 const WalletSchema = new mongoose.Schema({
+
+    ///Falta adicionar: bid (vetor de objetos que é usado para comunicar com o contrato)
    _id:{
       type: mongoose.Schema.Types.ObjectId,
       auto: true,
@@ -43,6 +45,12 @@ const WalletSchema = new mongoose.Schema({
        required:true,
        description:"Altura do dono da carteira"
    },
+
+   abi:{
+        type:mongoose.Schema.Types.Array,
+        default: [],
+        description: "vetor de objetos que é utilizdo para comunicação com o contrato"
+   }
 
 }, {
    timestamps: true
