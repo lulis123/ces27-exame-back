@@ -15,7 +15,7 @@ class WalletService{
    }
 
    async updateByWalletAddr(walletData){
-      const walletExists = await WalletModel.exists({walletaAddr:walletData.walletAddr});
+      const walletExists = await WalletModel.exists({walletAddr:walletData.walletAddr});
       if (!walletExists)
          return null;
       return await WalletModel.patchUpdate({walletAddr:walletData.walletAddr}, WalletData);
