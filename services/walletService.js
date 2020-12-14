@@ -9,7 +9,6 @@ class WalletService{
       if (walletExists)
          return null;
       const Wallet = new WalletModel(WalletData);
-      
       return this.toObject(await Wallet.save())
    }
 

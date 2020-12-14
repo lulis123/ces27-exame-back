@@ -1,17 +1,25 @@
 const express = require('express');
 const walletService = require('../services/walletService');
 const router = express.Router();
+const Web3 = require('web3');
+let web3 = undefined
+
 
 router.put('/updateWallet',
     async(req,res,next) => {
         try{
-            if(req.body.myWalletAddr == req.body.walletAddr)
+            if(req.body.myWalletAddr == req.body.walletAddr){
                 const updatedWallet = await walletService.updateByWalletAddr(req.body)
-
-            else
-               res.status(200).send({error: "You can't update a wallet that is not yours"});
-
+                if(updatedWallet)
+                    res.status(200).send();
+                else
+                    res.status(400).send(); 
+            }else
+               res.status(400).send({error: "You can't update a wallet that is not yours"});
+        }catch(error){
+            res.status(400).send({error});
         }
+        next();
     }
 )
 
@@ -32,18 +40,28 @@ router.post('/createWallet',
       }
       next();
    },
-   );
+);
 
 router.get('/getWallet', async (req,res,next) => {
    try {
     ///ADICIONAR CÓDIGO QUE CHEGA COM O CONTRATO
-	  console.log(req.query)
-      const wallet = await walletService.getBySymbol(req.query);
-      if (wallet != null)
-         res.status(201).json({wallet});
-      else
-         res.status(204).send();
-   } catch {
+      const wallet = await walletService.getByWalletAddr(req.query);
+      if (wallet == null)
+        res.status(204).send("Wallet not found");
+        else{
+            if(typeof web3 !== 'undefined')
+                web3 = new Web3(web3.currentProvider);
+            else
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+            const requestAddr = await web3.eth.getCoinbase()
+            const contract = new web3.eth.Contract(wallet.abi,requestWallet.contractAddr)
+            let allowed = await contract.methods.checkAccess(requestAddr).call();
+            if (allowd == true)
+                res.status(201).json({wallet});
+            else
+                 res.status(403).send("You can't access this wallet");
+        }
+        } catch {
       res.status(404).send({ error: "Error" });
    }
    next();
@@ -51,7 +69,7 @@ router.get('/getWallet', async (req,res,next) => {
 
 router.delete('/deleteWallet', async(req,res,next) => {
    try{
-      const deletedWallet = await walletService.deleteBySymbol(req.query);
+      const deletedWallet = await walletService.deleteByWalletAddr(req.query);
       if (deletedWallet != null){
          res.locals.deletedOk = true;
          res.status(200).send({deletedWallet});
