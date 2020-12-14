@@ -1,4 +1,4 @@
-<img alt="logo-ita" title="#CES 27 EXAME" src="https://logodownload.org/wp-content/uploads/2018/01/ita-logo.png" width="200px" />
+<img alt="logo-ita" title="#CES 27 EXAME" src="https://logodownload.org/wp-content/uploads/2018/01/ita-logo.png" width="400px" />
 
 ## [Back-end] CES-27 Exame
 Projeto do Back-end criado para a aplicação feita no exame de CES-27 pelos alunos: Luís Eduardo Martins Lauro e Ítalo Rennan Lima Silva
@@ -9,7 +9,7 @@ DB criado utilizando [MongoDB](https://www.mongodb.com/). <br/>
 Outras dependências utilizadas: 
  - [body-parser](https://www.npmjs.com/package/body-parser) - adiciona um middleware de parse para formatar o body de requests.
  - [cors](https://www.npmjs.com/package/cors) - configura a cors da API, permitindo rodar front e back-end localmente simultaneamente.
- - [express]()
+ - [express](https://expressjs.com/) - Framework para a criação do servidor
  - [mongoose](https://mongoosejs.com/) - modelagem do banco de dados utilizando MongoDB.
  - [mongoose-patch-update](https://www.npmjs.com/package/mongoose-patch-update) - facilitar atualização de dados no DB.
  - [nodemon](https://www.npmjs.com/package/nodemon) - atualização automática de mudanças feitas no js enquanto o servidor estiver rodando.
@@ -36,8 +36,8 @@ A princípio, para facilitar o acesso e teste da API, não estamos fazendo nenhu
 - "/wallet/createWallet" - Rota utilizada para criar uma carteira, recebe como parâmetros do body: walletAddr, contractAddr, name, age, height, weight.
 - "/wallet/getWallet" - Rota utilizada para obter uma carteira. Recebe como parâmetros o endereço da carteira que deve ser obtida. 
                         Antes de chamar a rota, é feita uma validação no front se o usuário pode ter acesso àquela carteira.
-- "/wallet/updateWallet" - Rota utilizada para atualizar a carteira. Rota recebe como parâmetro a nvoa carteira. A carteira a ser atualizada é encotnrada pelo walletAddr
-- "/wallet/deleteWallet" - Rota utilziada para deletar uma carteira. Recebe como paramêtro o walletAddr.
+- "/wallet/updateWallet" - Rota utilizada para atualizar a carteira. Rota recebe como parâmetro o walletAddr (usado para fazer query) e os novos dados do registro.
+- "/wallet/deleteWallet" - Rota utilizada para deletar uma carteira. Recebe como paramêtro o walletAddr.
 ```
 
 ### Iniciando a API localmente
