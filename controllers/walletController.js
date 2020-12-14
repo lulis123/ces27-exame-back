@@ -8,6 +8,7 @@ let web3 = undefined
 router.put('/updateWallet',
     async(req,res,next) => {
         try{
+            console.log(req.body);
             if(req.body.myWalletAddr == req.body.walletAddr){
                 const updatedWallet = await walletService.updateByWalletAddr(req.body)
                 if(updatedWallet)
