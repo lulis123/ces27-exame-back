@@ -36,6 +36,7 @@ A princípio, para facilitar o acesso e teste da API, não estamos fazendo nenhu
 - "/wallet/getWallet" - Rota utilizada para obter uma carteira. Recebe como parâmetros o endereço da carteira que deve ser obtida. Antes de chamar a rota, é feita uma validação no front se o usuário pode ter acesso àquela carteira.
 - "/wallet/updateWallet" - Rota utilizada para atualizar a carteira. Rota recebe como parâmetro a nvoa carteira. A carteira a ser atualizada é encotnrada pelo walletAddr
 - "/wallet/deleteWallet" - Rota utilziada para deletar uma carteira. Recebe como paramêtro o walletAddr.
+```
 
 ### Iniciando a API localmente
 Verificar se existe [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/), [mongoDB](https://www.mongodb.com/) e [docker](https://www.docker.com/) instalados na sua máquina antes de iniciar com o projeto. 
