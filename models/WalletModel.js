@@ -75,8 +75,6 @@ const protectedAttributes = [
 
 //Creating the Schema BoilerPlate
 WalletSchema.statics.getSortableAttributes = () => sortableAttributes;
-WalletSchema.plugin(mongoosePaginate);
 WalletSchema.plugin(mongoosePatchUpdate);
-
 
 module.exports = mongoose.model('WalletSchema',WalletSchema);
