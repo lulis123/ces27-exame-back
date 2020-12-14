@@ -32,5 +32,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/wallet',walletController);
-
-app.listen();
+app.listen(PORT, ()=> console.log(`Listening on ${PORT}`));
+app.use('/', (req,res,next)=> {
+   res.status(400).send("Seja bem vindo à API do exame de CES-27 dos alunos: Luís Eduardo e Italo Rennan")
+})
