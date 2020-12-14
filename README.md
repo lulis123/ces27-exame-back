@@ -26,7 +26,7 @@ Outras dependências utilizadas:
 O deploy da API foi feito utilizando o [heroku](https://dashboard.heroku.com/) <br/>
 O deploy do banco de dados foi feito utilizando o [Mongo Atlas](https://www.mongodb.com/cloud/atlas), plataforma construída em conjunto entre a Mongo e a AWS. <br/>
 A API está disponível no link: https://tranquil-gorge-34252.herokuapp.com/ <br/>
-A princípio, para facilitar o acesso e teste da API, não estamos fazendo nenhuma restrição nos resquest. Em uma versão operacional, deveríamos restringir os requests da API a apenas o IP do servidor<br/>
+A princípio, para facilitar o acesso e teste da API, não estamos fazendo nenhuma restrição nos resquest. Em uma versão final deveríamos restringir o acess às rotas apenas à aplicação front-end da aplicação.
 
 ### Rotas implementadas
 É importante comentar que, em uma implementação final, essas rotas não estariam disponíveis ao usuário. Apenas o servidor do heroku poderia acessá-las.
