@@ -1,6 +1,6 @@
 <img alt="logo-ita" title="#CES 27 EXAME" src="https://logodownload.org/wp-content/uploads/2018/01/ita-logo.png" width="200px" />
 
-## [Back-end] Vestibulinho - Cadastro e gestão de alunos
+## [Back-end] CES-27 Exame
 Projeto do Back-end criado para a aplicação feita no exame de CES-27 pelos alunos: Luís Eduardo Martins Lauro e Ítalo Rennan Lima Silva
 
 ### Tecnologias
