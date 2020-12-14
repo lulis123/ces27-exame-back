@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const app = express();
+const PORT = process.env.PORT || 3000;
 const morgan = require('morgan');
 const mongoosePatchUpdate = require('mongoose-patch-update');
 const walletController = require('./controllers/walletController');
@@ -32,4 +33,4 @@ app.use(bodyParser.json());
 
 app.use('/wallet',walletController);
 
-app.listen(5000);
+app.listen();
