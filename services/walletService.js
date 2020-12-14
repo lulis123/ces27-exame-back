@@ -1,3 +1,5 @@
+const WalletModel = require('../models/WalletModel');
+
 class WalletService{
 
    toObject(WalletModel){
