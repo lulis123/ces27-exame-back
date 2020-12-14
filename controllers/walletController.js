@@ -56,7 +56,7 @@ router.get('/getWallet', async (req,res,next) => {
             const requestAddr = await web3.eth.getCoinbase()
             const contract = new web3.eth.Contract(wallet.abi,requestWallet.contractAddr)
             let allowed = await contract.methods.checkAccess(requestAddr).call();
-            if (allowd == true)
+            if (allowed == true)
                 res.status(201).json({wallet});
             else
                  res.status(403).send("You can't access this wallet");
