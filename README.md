@@ -30,10 +30,12 @@ A API está disponível no link: https://tranquil-gorge-34252.herokuapp.com/ <br
 A princípio, para facilitar o acesso e teste da API, não estamos fazendo nenhuma restrição nos resquest. Em uma versão operacional, deveríamos restringir os requests da API a apenas o IP do servidor<br/>
 
 ### Rotas implementadas
+É importante comentar que, em uma implementação final, essas rotas não estariam disponíveis ao usuário. Apenas o servidor do heroku poderia acessá-las.
 ```
 - "/" - Rota de ping, para certificar que a API está rodando
 - "/wallet/createWallet" - Rota utilizada para criar uma carteira, recebe como parâmetros do body: walletAddr, contractAddr, name, age, height, weight.
-- "/wallet/getWallet" - Rota utilizada para obter uma carteira. Recebe como parâmetros o endereço da carteira que deve ser obtida. Antes de chamar a rota, é feita uma validação no front se o usuário pode ter acesso àquela carteira.
+- "/wallet/getWallet" - Rota utilizada para obter uma carteira. Recebe como parâmetros o endereço da carteira que deve ser obtida. 
+                        Antes de chamar a rota, é feita uma validação no front se o usuário pode ter acesso àquela carteira.
 - "/wallet/updateWallet" - Rota utilizada para atualizar a carteira. Rota recebe como parâmetro a nvoa carteira. A carteira a ser atualizada é encotnrada pelo walletAddr
 - "/wallet/deleteWallet" - Rota utilziada para deletar uma carteira. Recebe como paramêtro o walletAddr.
 ```
