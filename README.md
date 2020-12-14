@@ -9,7 +9,6 @@ DB criado utilizando [MongoDB](https://www.mongodb.com/). <br/>
 Outras dependências utilizadas: 
  - [body-parser](https://www.npmjs.com/package/body-parser) - adiciona um middleware de parse para formatar o body de requests.
  - [cors](https://www.npmjs.com/package/cors) - configura a cors da API, permitindo rodar front e back-end localmente simultaneamente.
- - [express](https://expressjs.com/) - Framework para a criação do servidor
  - [mongoose](https://mongoosejs.com/) - modelagem do banco de dados utilizando MongoDB.
  - [mongoose-patch-update](https://www.npmjs.com/package/mongoose-patch-update) - facilitar atualização de dados no DB.
  - [nodemon](https://www.npmjs.com/package/nodemon) - atualização automática de mudanças feitas no js enquanto o servidor estiver rodando.
