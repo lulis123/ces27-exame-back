@@ -49,17 +49,7 @@ router.get('/getWallet', async (req,res,next) => {
       if (wallet == null)
         res.status(204).send("Wallet not found");
         else{
-            if(typeof web3 !== 'undefined')
-                web3 = new Web3(web3.currentProvider);
-            else
-                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-            const requestAddr = await web3.eth.getCoinbase()
-            const contract = new web3.eth.Contract(wallet.abi,requestWallet.contractAddr)
-            let allowed = await contract.methods.checkAccess(requestAddr).call();
-            if (allowed == true)
                 res.status(201).json({wallet});
-            else
-                 res.status(403).send("You can't access this wallet");
         }
         } catch {
       res.status(404).send({ error: "Error" });

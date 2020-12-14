@@ -12,11 +12,11 @@ class WalletService{
       return this.toObject(await Wallet.save())
    }
 
-   async updateByWalletAddr({walletAddr}){
-      const walletExists = await WalletModel.exists({walletAddr});
+   async updateByWalletAddr(walletData){
+      const walletExists = await WalletModel.exists({walletaAddr:walletData.walletAddr});
       if (!walletExists)
          return null;
-      return await WalletModel.patchUpdate({walletAddr}, WalletData);
+      return await WalletModel.patchUpdate({walletAddr:walletData.walletAddr}, WalletData);
    }
 
    async getByWalletAddr({walletAddr}){
