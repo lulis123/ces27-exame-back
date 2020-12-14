@@ -45,11 +45,11 @@ Verificar se existe [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.c
 ```bash
 # Primeira utilização
 # Clone o repositório front-end
-$ git clone https://github.com/lulis123/back-vestibulinho-casd
+$ git clone https://github.com/lulis123/ces27-exame-back
 
 # Primeira utilização
 # Entre no repositório
-$ cd front-vestibulinho-casd
+$ cd ces27-exame-back
 
 # Primeira utilização
 # Instale as dependências que estão presentes no arquivo 'package.json'
