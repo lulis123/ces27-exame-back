@@ -1,0 +1,30 @@
+{
+  "name": "exame-ces27-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lulis123/ces27-exame-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lulis123/ces27-exame-back/issues"
+  },
+  "homepage": "https://github.com/lulis123/ces27-exame-back#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "helmet": "^4.2.0",
+    "mongoose": "^5.11.7",
+    "mongoose-patch-update": "^1.0.6",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
+    "web3": "^1.3.0"
+  }
+}
